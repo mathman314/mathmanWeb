@@ -1,0 +1,249 @@
+<html>
+<head>
+    <title>피타고라스 수에 대해</title>
+</head>
+
+<BODY BACKGROUND="../image/back.gif">
+<center>
+    <font face="궁서체" color="#c00000">
+	    <h1>피타고라스 수의 연구</h1>        
+    </font>
+    <table border=3><th>
+        만물은 수이다. - 피타코라스 -
+    </table>
+</center>
+<p>
+
+<font face="궁서체" color="#400040">
+        <h2>1. 소개</h2>
+</font>
+
+(유클리드 기하학에서) 직각삼각형을 이루는 유일한 연속된 세 자연수의 세 변의 
+길이는 <b>3, 4, 5</b>이다. <font color=blue>피타고라스의 정리</font>는 
+<font color=red>직각삼각형의 빗변의 길이의 제곱은 다른 두 변의 길이의 
+제곱의 합과 같다</font>는 것이다. 이를 세 변의 길이가 3,4,5인 삼각형에
+적용해 보면 '5의 제곱 = 3의 제곱 + 4의 제곱', 즉 '25 = 9 + 16'을 만족하므로
+빗변의 길이가 5인 직각삼각형임을 알 수 있다. 피타고라스의 정리에 대한 증명은
+여기선 생략한다.<p>
+
+세 변의 길이가 모두 자연수인 직각삼각형이 있을 때, 이 세 변의 길이를
+<b>피타고라스 3쌍</b>이라고 하고, 그 중 특히 세 수들이 서로소인 경우엔
+<b>원시 피타고라스 3쌍</b>이라고 한다. 이를 작은 수부터 순서쌍으로 (3,4,5)
+등과 같이 나타내자. (3,4,5)는 '원시 피타고라스 3쌍'이며 (6,8,10)은 그냥
+'피타고라스 3쌍'이다. 어떤 '피타고라스 3쌍'에 대해 그 수들을 각각
+k(k는 자연수)배한 수는 모두 피타고라스 수가 된다. 피타고라스 수는 무수히 
+많다. 원시 피타고라스 3쌍도 무한히 많을까? 또 이들을 작은 수부터 빠짐없이
+구하는 방법이 없을까? 등등 여기선 '원시 피타고라스 3쌍'을 구하는 문제에 
+관해 다룰 것이다. <p>
+
+<font face="궁서체" color="#400040">
+	<h2>2. 원시 피타고라스 3쌍을 구하는 몇 가지 방법</h2>
+</font>
+
+
+<font face="궁서체" color="#400080">
+	<h3>2.1 방법 첫 번째</h3>
+</font>
+
+<table width="70%" border=1 align=center bgcolor=white>
+<tr bgcolor=yellow>
+        <td width="15%"><center>n</center></td>
+        <td width="15%"><center>a<hr>2n+1</center></td>
+        <td width="15%"><center>b<hr>2n^2+2n</center></td>
+        <td width="15%"><center>c<hr>2n^2+2n+1</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>1</center></td>
+        <td width="15%"><center>3</center></td>
+        <td width="15%"><center>4</center></td>
+        <td width="15%"><center>5</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>2</center></td>
+        <td width="15%"><center>5</center></td>
+        <td width="15%"><center>12</center></td>
+        <td width="15%"><center>13</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>3</center></td>
+        <td width="15%"><center>7</center></td>
+        <td width="15%"><center>24</center></td>
+        <td width="15%"><center>25</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>4</center></td>
+        <td width="15%"><center>9</center></td>
+        <td width="15%"><center>40</center></td>
+        <td width="15%"><center>41</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>5</center></td>
+        <td width="15%"><center>11</center></td>
+        <td width="15%"><center>60</center></td>
+        <td width="15%"><center>61</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>6</center></td>
+        <td width="15%"><center>13</center></td>
+        <td width="15%"><center>84</center></td>
+        <td width="15%"><center>85</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>7</center></td>
+        <td width="15%"><center>15</center></td>
+        <td width="15%"><center>112</center></td>
+        <td width="15%"><center>113</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>8</center></td>
+        <td width="15%"><center>17</center></td>
+        <td width="15%"><center>144</center></td>
+        <td width="15%"><center>145</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>9</center></td>
+        <td width="15%"><center>19</center></td>
+        <td width="15%"><center>180</center></td>
+        <td width="15%"><center>181</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>10</center></td>
+        <td width="15%"><center>21</center></td>
+        <td width="15%"><center>220</center></td>
+        <td width="15%"><center>221</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>...</center></td>
+        <td width="15%"><center>...</center></td>
+        <td width="15%"><center>...</center></td>
+        <td width="15%"><center>...</center></td></tr>
+</table><p>
+
+<font face="궁서체" color="#400080">
+	<h3>2.2 방법 두 번째</h3>
+</font>
+
+<table width="70%" border=1 align=center bgcolor=white>
+<tr bgcolor=yellow>
+        <td width="15%"><center>n</center></td>
+        <td width="15%"><center>a<hr>4n</center></td>
+        <td width="15%"><center>b<hr>4n^2-1</center></td>
+        <td width="15%"><center>c<hr>4n^2+1</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>1</center></td>
+        <td width="15%"><center>4</center></td>
+        <td width="15%"><center>3</center></td>
+        <td width="15%"><center>5</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>2</center></td>
+        <td width="15%"><center>8</center></td>
+        <td width="15%"><center>15</center></td>
+        <td width="15%"><center>17</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>3</center></td>
+        <td width="15%"><center>12</center></td>
+        <td width="15%"><center>35</center></td>
+        <td width="15%"><center>37</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>4</center></td>
+        <td width="15%"><center>16</center></td>
+        <td width="15%"><center>63</center></td>
+        <td width="15%"><center>65</center></td></tr>
+<tr>
+        <td width="15%" bgcolor=green><center>...</center></td>
+        <td width="15%"><center>...</center></td>
+        <td width="15%"><center>...</center></td>
+        <td width="15%"><center>...</center></td></tr>
+</table><p>
+
+<font face="궁서체" color="#400080">
+	<h3>2.3 방법 세 번째</h3>
+</font>
+
+<table width="70%" border=1 align=center bgcolor=white>
+<tr bgcolor=yellow>
+        <td width="10%"><center>m</center></td>
+        <td width="10%"><center>n</center></td>
+        <td width="15%"><center>a<hr>m^2-n^2</center></td>
+        <td width="15%"><center>b<hr>2mn</center></td>
+        <td width="15%"><center>c<hr>m^2+n^2</center></td></tr>
+<tr>
+        <td bgcolor=green><center>2</center></td>
+        <td bgcolor=green><center>1</center></td>
+        <td><center>3</center></td>
+        <td><center>4</center></td>
+        <td><center>5</center></td></tr>
+<tr>
+        <td bgcolor=green><center>3</center></td>
+        <td bgcolor=green><center>2</center></td>
+        <td><center>5</center></td>
+        <td><center>12</center></td>
+        <td><center>13</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 4</center></td>
+        <td bgcolor=green><center> 1</center></td>
+        <td><center> 15</center></td>
+        <td><center> 8</center></td>
+        <td><center> 17</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 4</center></td>
+        <td bgcolor=green><center> 3</center></td>
+        <td><center> 7</center></td>
+        <td><center> 24</center></td>
+        <td><center> 25</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 5</center></td>
+        <td bgcolor=green><center> 2</center></td>
+        <td><center> 21</center></td>
+        <td><center> 20</center></td>
+        <td><center> 29</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 5</center></td>
+        <td bgcolor=green><center> 4</center></td>
+        <td><center> 9</center></td>
+        <td><center> 40</center></td>
+        <td><center> 41</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 6</center></td>
+        <td bgcolor=green><center> 1</center></td>
+        <td><center> 35</center></td>
+        <td><center> 12</center></td>
+        <td><center> 37</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 6</center></td>
+        <td bgcolor=green><center> 5</center></td>
+        <td><center> 14</center></td>
+        <td><center> 60</center></td>
+        <td><center> 61</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 7</center></td>
+        <td bgcolor=green><center> 2</center></td>
+        <td><center> 45</center></td>
+        <td><center> 28</center></td>
+        <td><center> 53</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 7</center></td>
+        <td bgcolor=green><center> 4</center></td>
+        <td><center> 33</center></td>
+        <td><center> 56</center></td>
+        <td><center> 65</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 7</center></td>
+        <td bgcolor=green><center> 6</center></td>
+        <td><center> 13</center></td>
+        <td><center> 84</center></td>
+        <td><center> 85</center></td></tr>
+<tr>
+        <td bgcolor=green><center> 8</center></td>
+        <td bgcolor=green><center> 1</center></td>
+        <td><center> 63</center></td>
+        <td><center> 16</center></td>
+        <td><center> 65</center></td></tr>
+<tr>
+        <td bgcolor=green><center> ...</center></td>
+        <td bgcolor=green><center> ...</center></td>
+        <td><center> ...</center></td>
+        <td><center> ...</center></td>
+        <td><center> ...</center></td></tr>
+</table>
+
+<p>
+
+<hr>  <!------ 태식 일반 문서의 꼬리 부분 ------>
+최초 작성일 : 1998.4.
+<script language=javascript>	//- 마지막 수정일
+	//document.writeln("Last modified on : " + document.lastModified)
+</script>
+
+</body>
+</html> <!--- 여기가 끝 --->
+

@@ -1,0 +1,8 @@
+echo "imglist.txt 파일을 만듭니다."
+ls | grep gif > imglist.txt
+echo "파일의 퍼미션을 맞춥니니다."
+chmod 666 imglist.txt
+chmod 644 imgshow.pl
+chmod 755 imgshow.cgi
+chmod 755 install_imgshow
+echo "초기화가 끝났습니다."

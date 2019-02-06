@@ -1,0 +1,651 @@
+<html>
+<head>
+    <title>태식의 마방진 연구</title>
+<META  name="description" content="마방진">
+<META  name="keywords" content="마방진, magic square">
+</head>
+
+<BODY BACKGROUND="../image/back.gif">
+<center>
+    <font face="궁서체" color="#c00000">
+        <h1>마방진</h1>
+    </font>
+    <table border=3><th>
+        사랑은 한순간의 열정이 아니다. 평생에 걸친 조용한 희생이다.
+    </table>
+</center>
+<p>
+
+<IMG SRC="../image/point.gif"> 차 례
+<ol>
+    <li> <a href="#1"> 개요 </a>
+    <li> <a href="#2"> 몇 가지 3차방진 방법 소개 </a>
+    <li> <a href="#3"> 5차 이상의 홀수방진에 대하여 </a>
+    <li> <a href="#4"> 4차방진은 쉽게 </a>
+    <li> <a href="#5"> 6차방진 및 8차방진 </a>
+    <li> <a href="#6"> 결론 및 과제 </a>
+</ol>
+
+<A NAME="1">
+<font face="궁서체" color="#400040">
+        <h2>1. 개요</h2>
+</font>
+고등학교 때였다. 수학을 좋아했지만 별로 교과서나 자습서(참고서)같은 것을 안
+보던 나였는데, 어느날 친구의 자습서에 읽을 거리로 "마방진"에 대해 나온 것을 
+보게 되었다. 마방진은 어렸을 적 누구나 한 번쯤은 접해본 기억이 있을 것이다.<br>
+<b>마방진</b>은 정사각형의 격자에 1부터 연속된 수를 넣어서 각 열의 합, 각 행의
+합, 각 대각선의 합이 같도록 하는 것이다. <b>n차방진</b>이라 하면 행의 수가 n,
+열의 수가 n인 마방진을 말한다. 그러니까 n차방진은 n*n의 격자에 1부터 n의
+제곱수까지를 넣어서 마방진을 만들어야 한다.<b>홀수방진</b>이라 함은 그 n값이
+홀수일 때를 말한다.<b>짝수방진</b>은 n값이 짝수일 때이다.<br>
+그 책에서 홀수방진에 대한 일반적인 해법은 나와 있었는데 짝수방진에 대한
+일반적인 해법은 없다고 했다. 하지만 나름대로 해보니 방법이 없는 것이 아니었다.
+여기서는 작은 수의 홀수방진과 짝수방진을 구하는 몇가지 예를 보여줄 것이다.
+
+<A NAME="2">
+<font face="궁서체" color="#400040">
+        <h2>2. 몇 가지 3차방진 방법 소개</h2>
+</font>
+
+
+<font face="궁서체" color="#400080">
+        <h3>2.1. 행 및 열 이동에 의한 방법</h3><p>
+</font>
+
+이 방법은 초기 상태(순서대로 수를 넣은 상태)에서 각 행의 합과 열의 합을 비교해
+보고, 그 값을 같게 만드는 방법을 찾는 데서 착안되었다.<br>
+예를 들어 3차방진일 경우에 아래 표에서 <b>(1). 초기화</b>를 보면 2열의 합은
+15로 제대로 되어 있으며, 1열은 3이 모자라고 3열은 3이 남음을 알 수 있다.
+따라서 2열의 합은 그대로 되게 하며, 3열의 남는 부분을 1열로 보낼 수 있는 적당한
+방법을 찾아 보자. 이 때, 단순히 1열의 어떤 수와 3열의 어떤 수를 교환한다면 또
+다른 문제를 만들 수 있다. 밀어내기식의 방법을 이용하여 다음과 같이 한다.
+<b>(2).</b> 1행은 오른쪽으로 밀어낸다. 이 때, 3열에서 밀려난 수는 1열로 들어간다.
+마찬 가지로 <b>(3).</b> 3행은 왼쪽으로 밀어낸다. 이렇게 하면 각 행의 합은
+변화시키지 않은 상태로 각 열의 합이 모두 15로 같아졌음을 알 수 있다.
+마찬가지로 행에 대해서도 <b>(4), (5)</b>를 행하여 모든 행에 대해 각 행들의 합이
+같아졌음을 알 수 있다. 이렇게 했을 경우에 두 대각선의 합도 같으므로 더 이상
+손을 대지 않아도 됨을 알 수 있다.
+<p>
+
+<table border=0 bgcolor=ccffcc cellpadding=10 cellspacing=0>
+<tr>
+  <td colspan=2>
+    (1). 초기화
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>행 합</td></tr>
+    <tr><td>1행</td><td> 1</td><td> 2</td><td> 3</td><td> 6</td></tr>
+    <tr><td>2행</td><td> 4</td><td> 5</td><td> 6</td><td> 15</td></tr>
+    <tr><td>3행</td><td> 7</td><td> 8</td><td> 9</td><td> 24</td></tr>
+    <tr><td>열 합</td><td> 12</td><td> 15</td><td> 18</td><td> 45</td></tr>
+    </table>
+  </td>
+<tr>
+  <td>
+    (2). 1행 열이동
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>행 합</td></tr>
+    <tr><td>1행</td><td> 3</td><td> 1</td><td> 2</td><td> 6</td></tr>
+    <tr><td>2행</td><td> 4</td><td> 5</td><td> 6</td><td> 15</td></tr>
+    <tr><td>3행</td><td> 7</td><td> 8</td><td> 9</td><td> 24</td></tr>
+    <tr><td>열 합</td><td> 14</td><td> 14</td><td> 17</td><td> 45</td></tr>
+    </table>
+  </td>
+  <td>
+    (3). 3행 열이동
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>행 합</td></tr>
+    <tr><td>1행</td><td> 3</td><td> 1</td><td> 2</td><td> 6</td></tr>
+    <tr><td>2행</td><td> 4</td><td> 5</td><td> 6</td><td> 15</td></tr>
+    <tr><td>3행</td><td> 8</td><td> 9</td><td> 7</td><td> 24</td></tr>
+    <tr><td>열 합</td><td> 15</td><td> 15</td><td> 15</td><td> 45</td></tr>
+    </table>
+  </td>
+<tr>
+  <td>
+    (4). 1열 행이동
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>행 합</td></tr>
+    <tr><td>1행</td><td> 8</td><td> 1</td><td> 2</td><td> 11</td></tr>
+    <tr><td>2행</td><td> 3</td><td> 5</td><td> 6</td><td> 14</td></tr>
+    <tr><td>3행</td><td> 4</td><td> 9</td><td> 7</td><td> 20</td></tr>
+    <tr><td>열 합</td><td> 15</td><td> 15</td><td> 15</td><td> 45</td></tr>
+    </table>
+  </td>
+  <td>
+    (5). 3열 행이동
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>행 합</td></tr>
+    <tr><td>1행</td><td> 8</td><td> 1</td><td> 6</td><td> 15</td></tr>
+    <tr><td>2행</td><td> 3</td><td> 5</td><td> 7</td><td> 15</td></tr>
+    <tr><td>3행</td><td> 4</td><td> 9</td><td> 2</td><td> 15</td></tr>
+    <tr><td>열 합</td><td> 15</td><td> 15</td><td> 15</td><td> 45</td></tr>
+    </table>
+  </td>
+<tr>
+  <td colspan=2>
+    <center>
+    <b><font color=green>이 과정을 애니매이션으로 보면 다음과 같다</font></b><br>
+    <img src="ma3_a1.gif">
+    </center>
+  </td>
+</table>
+<p>
+
+<font face="궁서체" color="#400080">
+        <h3>2.2. 대각선 진행 알고리즘에 의한 방법</h3><p>
+</font>
+
+<b>대각선 진행 알고리즘</b><br>
+<font color=blue>
+<ol><li>첫 번째 수인 1은 첫 행(row)의 가운데 열(column)에 위치시킨다.<br>
+	(이 위치를 현위치, 현수를 1이라고 하자.)
+    <li>현위치의 행이 첫 행이라면 다음위치의 행은 마지막 행이 된다.<br>
+	현위치의 행이 첫 행이 아니라면 다음위치의 행은 그 위쪽 행이 된다.
+    <li>현위치의 열이 마지막 열이라면 다음위치의 열은 첫 열이 된다.<br>
+	현위치의 열이 마지막 열이 아니라면 다음위치의 열은 그 오른쪽 열이 된다.
+    <li>만일 다음위치에 이미 숫자가 놓여져 있다면 다음위치는 현위치 바로 아래쪽 칸이 된다.
+    <li>정해진 다음위치에 현수보다 1 큰 수를 넣는다.
+    <li>다음위치가 현위치가 되며 방금 넣은 수를 현수로 정한다.
+    <li>모든 칸이 채워지지 않았으면 2번으로 가서 반복한다.
+    <li>모든 칸이 채워졌으므로 끝이다.
+</ol>
+</font>
+<p>
+알고리즘에 의해 3차방진이 다음과 같이 만들어 진다.
+이것은 또 대칭 및 회전에 의해 7가지의 방법이 더 있음을 알 수 있다.
+<p>
+<table border=0 bgcolor=ccffcc cellpadding=10 cellspacing=0>
+<tr>
+  <td>(1)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> <br></td>
+    <tr><td> <br></td><td> <br></td><td> <br></td>
+    <tr><td> <br></td><td> <br></td><td> <br></td>
+    </table>
+  </td>
+  <td>(2)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> <br></td>
+    <tr><td> <br></td><td> <br></td><td> <br></td>
+    <tr><td> <br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+  <td>(3)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> <br></td>
+    <tr><td> 3<br></td><td> <br></td><td> <br></td>
+    <tr><td> <br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+<tr>
+  <td>(4)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> <br></td>
+    <tr><td> 3<br></td><td> <br></td><td> <br></td>
+    <tr><td> 4<br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+  <td>(5)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> <br></td>
+    <tr><td> 3<br></td><td> 5<br></td><td> <br></td>
+    <tr><td> 4<br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+  <td>(6)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> 6<br></td>
+    <tr><td> 3<br></td><td> 5<br></td><td> <br></td>
+    <tr><td> 4<br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+<tr>
+  <td>(7)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> <br></td><td> 1</td><td> 6<br></td>
+    <tr><td> 3<br></td><td> 5<br></td><td> 7<br></td>
+    <tr><td> 4<br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+  <td>(8)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> 8<br></td><td> 1</td><td> 6<br></td>
+    <tr><td> 3<br></td><td> 5<br></td><td> 7<br></td>
+    <tr><td> 4<br></td><td> <br></td><td> 2<br></td>
+    </table>
+  </td>
+  <td>(9)
+    <table border=1 bgcolor=ffccff cellspacing=0 cellpadding=15>
+    <tr><td> 8<br></td><td> 1</td><td> 6<br></td>
+    <tr><td> 3<br></td><td> 5<br></td><td> 7<br></td>
+    <tr><td> 4<br></td><td> 9<br></td><td> 2<br></td>
+    </table>
+  </td>
+<tr>
+  <td colspan=3>
+    <center>
+    <b><font color=green>이 과정을 애니매이션으로 보면 다음과 같다</font></b><br>
+    <img src="ma3_a2.gif">
+    </center>
+  </td>
+</table>
+<p>
+
+<font face="궁서체" color="#400080">
+        <h3>2.3. 대수적 방법</h3><p>
+</font>
+
+<table border=0 bgcolor=ccffcc cellpadding=10>
+<tr>
+  <td>(1)
+    <table border=1 bgcolor=ccccff cellspacing=0 cellpadding=15>
+    <tr><td> a<br></td><td> b</td><td> c<br></td>
+    <tr><td> d<br></td><td> <b>e</b><br></td><td> f<br></td>
+    <tr><td> g<br></td><td> h<br></td><td> i<br></td>
+    </table>
+  </td>
+  <td valign=top>(1) 가장 가운데 수 e는 얼마일까?<p>
+아홉 개의 칸에 a부터 차례로 i까지 어떤 수가 들어간다.<br>
+각 숫자는 서로 다른 1부터 9까지의 자연수이다.<br>
+1+2+ ... +8+9 = 45이므로 a+b+..+i = 45이다. ---(식.1)<br>
+각 행, 열 및 대각선의 합은 모두 15(=45/3)가 되어야 한다.<br>
+따라서 a+e+i=15, d+e+f=15, g+e+c=15, h+e+d=15이다. ---(식.2)<br>
+(식.2)의 네 식을 모두 더하면 a+b+c+d+e+f+g+h+i+3e=60이다. ---(식.3)<br>
+(식.1)과 (식.3)에 의해 3e=60-45=15, 즉 e=5임을 알 수 있다.<br>
+  </td>
+<tr>
+  <td>(2-1)
+    <table border=1 bgcolor=ccccff cellspacing=0 cellpadding=15>
+    <tr><td> 1 ?<br></td><td> b</td><td> c<br></td>
+    <tr><td> d<br></td><td> <b>5</b><br></td><td> f<br></td>
+    <tr><td> g<br></td><td> h<br></td><td> i<br></td>
+    </table>
+  </td>
+  <td valign=top>(2-1) 귀퉁이에 1이 있을 경우엔?<p>
+1이 있을 곳은 a와 b 둘 중 하나이다(대칭 및 회전에 의해 다른 곳도
+같은 위치로 볼 수 있으므로).<br>
+물론 두 군데 모두 가능할 수도 있고, 둘 다 불가능할 수도 있으니
+하나씩 해 보자.<br>
+일단 여기서는 a가 1일 경우에 어떻게 되나 보자.<br>
+1을 포함하는 대각선에서 i=15-(1+5)=9임을 알 수 있다.<br>
+1행에서 b+c=15-1=14임을 알 수 있다. ---(식.4)<br>
+3열에서 c+f=15-i=6임을 알 수 있다. ---(식.5)<br>
+(식.4)를 만족하는 c는 6과 8 중의 하나여야 한다. 그러나, 그 어떤
+것도 (식.5)를 만족하는 c값이 될 수 없다.<br>
+따라서 1이 귀퉁이에 오면 마방진을 만들 수 없다.
+  </td>
+<tr>
+  <td>(2-2)
+    <table border=1 bgcolor=ccccff cellspacing=0 cellpadding=15>
+    <tr><td> a<br></td><td> 1 ?</td><td> c<br></td>
+    <tr><td> d<br></td><td> <b>5</b><br></td><td> f<br></td>
+    <tr><td> g<br></td><td> h<br></td><td> i<br></td>
+    </table>
+  </td>
+  <td valign=top>(2-2) 변에 1이 있을 경우엔?<p>
+여기서는 b가 1이라고 가정하자.<br>
+이 때, h는 9가 된다(이제 이 정도에 대한 이유는 생략하자).<br>
+a 값은 6과 8 중의 하나인데, 어느 경우나 같으므로 a에 6을 넣고,
+c에 8을 넣자.<br>
+그러면 순차적으로 i=4, g=2, d=7, f=3임을 알 수 있으며, a가 6인
+경우에 유일한 해임을 알 수 있다.<br>
+  </td>
+<tr>
+  <td>(3)
+    <table border=1 bgcolor=ccccff cellspacing=0 cellpadding=15>
+    <tr><td> <b>6</b><br></td><td> <b>1</b></td><td> 8<br></td>
+    <tr><td> 7<br></td><td> <b>5</b><br></td><td> 3<br></td>
+    <tr><td> 2<br></td><td> 9<br></td><td> 4<br></td>
+    </table>
+  </td>
+  <td valign=top>(3) 하나의 해<p>
+이 해는 b=1이고 a=6일 경우의 해이다.<br>
+이는 대칭 및 회전에 의해 7개의 해를 더 만들 수 있다.<br>
+또한 이 8가지의 경우를 제외한 방법은 없음이 이렇게 증명되었다.
+  </td>
+</table>
+<p>
+
+<A NAME="3">
+<font face="궁서체" color="#400040">
+        <h2>3. 5차 이상의 홀수 방진에 대하여</h2>
+</font>
+
+위에서 소개한 세 가지의 3차방진 해법을 완전히 이해했다면 5차 이상에
+대해서도 해법을 구할 수 있다. 일반적으로 두번째에 소개한 <b>대각선 진행
+알고리즘</b>은 너무 유명하여 대부분 알고 있으므로 5차 이상의 홀수 방진에
+대해서 굳이 설명할 필요가 없으리라 본다. 다만 관심있는 사람은 아무리 큰
+홀수 방진에 대해서도 이것이 성립함을 증명해 보라고 권하고 싶다.
+<p>
+또한 5차 이상의 홀수 방진에 대한 해의 총 개수(참고로 대칭 및 회전에 의해 
+달라질 수 있는 것을 하나로 칠 경우엔 3차방진의 해는 한 개이다)는 얼마나
+될 것인가에 대해 연구해 보는 것도 좋은 일거리라 생각한다.
+
+<A NAME="4">
+<font face="궁서체" color="#400040">
+        <h2>4. 4차 방진은 쉽게</h2>
+</font>
+
+홀수 방진은 <b>대각선 진행 알고리즘</b>을 쓰면 모든 홀수 방진에 대해
+가능함을 알게 되었다. 그렇다면 짝수 방진도 그렇게 쉽게 될까?<br>
+적어도 4차방진에 대해선 무척 쉬운 방법이 있음을 알 수 있다.
+<p>
+
+<font face="궁서체" color="#400080">
+        <h3>4.1. 행 및 열 교환에 의한 방법</h3><p>
+</font>
+
+<table border=0 bgcolor=ccffcc cellpadding=10>
+<tr>
+  <td>(1). 초기화
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> 2</td><td> 3</td><td> 4</td><td bgcolor=ffffcc> 10</td>
+    <tr><td bgcolor=ccffff>2행</td><td> 5<br></td><td> 6</td><td> 7</td><td> 8</td><td bgcolor=ffffcc> 26</td>
+    <tr><td bgcolor=ccffff>3행</td><td> 9<br></td><td> 10</td><td> 11</td><td> 12</td><td bgcolor=ffffcc> 42</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> 14</td><td> 15</td><td> 16</td><td bgcolor=ffffcc> 58</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> 28</td><td> 32</td><td> 36</td><td> 40</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(1) 초기화<p>
+각 행 및 열의 합은 (1+2+...+16)/4)=<b>34</b>가 되어야 한다.<br>
+초기화 된 상태에서 각 대각선의 합은 34임을 알 수 있다.<br>
+일단은 대각선의 수들은 그대로 두고 맞추는 방법을 생각해 보자.<br>
+<b>2열과 3열</b>은 같은 행에 대해 모두 1만큼씩의 차이가 난다. 
+따라서 네 행 중 두 행만 열교환(2열과 3열을 교환)하면 2열과 3열은 모두 열의
+합이 34가 된다.<br>
+이는 <b>1열과 4열</b>에 대해서도 마찬가지이다.<br>
+또한 마찬가지 방법으로 <b>2행과 3행</b>, <b>1행과 4행</b>에 대해서도 적당히
+두 열씩 행교환하면 각 행의 합이 34로 같아진다.<br>
+결국 이 문제는 적당히 행 및 열교환하는 방법을 찾는 문제로 생각할 수 있다.<br>
+물론 이 방법은 많은 방법 중에 하나이며, 다른 방법도 있을 수 있다.
+  </td>
+<tr>
+  <td>(2-1)
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> -</td><td> -</td><td> 4</td><td bgcolor=ffffcc> 10</td>
+    <tr><td bgcolor=ccffff>2행</td><td> -<br></td><td> 6</td><td> 7</td><td> -</td><td bgcolor=ffffcc> 26</td>
+    <tr><td bgcolor=ccffff>3행</td><td> -<br></td><td> 10</td><td> 11</td><td> -</td><td bgcolor=ffffcc> 42</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> -</td><td> -</td><td> 16</td><td bgcolor=ffffcc> 58</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> ?</td><td> ?</td><td> ?</td><td> ?</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(2-1) 대칭 열교환 : 대각선 고정<p>
+대각선의 수들은 그대로 두자.<br>
+대칭되는 열은 2열과 3열, 1열과 4열이다.<br>
+각 대칭되는 열에 대해 두 행씩 열교환하는 방법은 한 가지 방법밖에 없다.<br>
+왼쪽 표에서 <b>'-'</b> 표시한 곳의 수들을 대칭 교환한다는 뜻이다.
+  </td>
+<tr>
+  <td>(2-2)
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> 3</td><td> 2</td><td> 4</td><td bgcolor=ffffcc> 10</td>
+    <tr><td bgcolor=ccffff>2행</td><td> 8<br></td><td> 6</td><td> 7</td><td> 5</td><td bgcolor=ffffcc> 26</td>
+    <tr><td bgcolor=ccffff>3행</td><td> 12<br></td><td> 10</td><td> 11</td><td> 9</td><td bgcolor=ffffcc> 42</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> 15</td><td> 14</td><td> 16</td><td bgcolor=ffffcc> 58</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> 34</td><td> 34</td><td> 34</td><td> 34</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(2-2) 대칭 열교환 결과<p>
+그렇게 대칭교환시키니까 왼편과 같이 되었다.<br>
+각 열의 합들이 모두 같아졌음을 확인할 수 있다.<br>
+  </td>
+<tr>
+  <td>(3-1)
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> |</td><td> |</td><td> 4</td><td bgcolor=ffffcc> ?</td>
+    <tr><td bgcolor=ccffff>2행</td><td> |<br></td><td> 6</td><td> 7</td><td> |</td><td bgcolor=ffffcc> ?</td>
+    <tr><td bgcolor=ccffff>3행</td><td> |<br></td><td> 10</td><td> 11</td><td> |</td><td bgcolor=ffffcc> ?</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> |</td><td> |</td><td> 16</td><td bgcolor=ffffcc> ?</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> 34</td><td> 34</td><td> 34</td><td> 34</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(3-1) 대칭 행교환 : 대각선 고정<p>
+이제 마찬가지로 대칭 행교환을 한다.<br>
+<b>'|'</b> 표시한 곳의 수들을 대칭 교환시킨다.
+  </td>
+<tr>
+  <td>(3-2)
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> 15</td><td> 14</td><td> 4</td><td bgcolor=ffffcc> 34</td>
+    <tr><td bgcolor=ccffff>2행</td><td> 12<br></td><td> 6</td><td> 7</td><td> 9</td><td bgcolor=ffffcc> 34</td>
+    <tr><td bgcolor=ccffff>3행</td><td> 8<br></td><td> 10</td><td> 11</td><td> 5</td><td bgcolor=ffffcc> 34</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> 3</td><td> 2</td><td> 16</td><td bgcolor=ffffcc> 34</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> 34</td><td> 34</td><td> 34</td><td> 34</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(3-2) 대칭 행교환 결과<p>
+그러면 왼편과 같이 각 행의 합들도 같아졌음을 알 수 있다.<br>
+두 대각선의 수들은 고정시켜두었기에 그들의 합도 모두 같다.<br>
+이렇게 해서 하나의 4차방진을 만들었다.<br>
+  </td>
+<tr>
+  <td colspan=2>
+    <center>
+    <b><font color=green>이 과정을 애니매이션으로 보면 다음과 같다</font></b><br>
+    <img src="ma4_a1.gif">
+    </center>
+  </td>
+</table>
+<p>
+
+<font face="궁서체" color="#400080">
+        <h3>4.2. 행 및 열 교환법에 의한 4차방진의 예들</h3><p>
+</font>
+
+<table border=0 bgcolor=ccffcc cellpadding=10 cellspacing=0>
+<tr>
+  <td valign=top>(1). 초기화
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr bgcolor=ccffff><td><br></td><td>1열</td><td>2열</td><td>3열</td><td>4열</td><td>행 합</td></tr>
+    <tr><td bgcolor=ccffff>1행</td><td> 1<br></td><td> 2</td><td> 3</td><td> 4</td><td bgcolor=ffffcc> 10</td>
+    <tr><td bgcolor=ccffff>2행</td><td> 5<br></td><td> 6</td><td> 7</td><td> 8</td><td bgcolor=ffffcc> 26</td>
+    <tr><td bgcolor=ccffff>3행</td><td> 9<br></td><td> 10</td><td> 11</td><td> 12</td><td bgcolor=ffffcc> 42</td>
+    <tr><td bgcolor=ccffff>4행</td><td> 13<br></td><td> 14</td><td> 15</td><td> 16</td><td bgcolor=ffffcc> 58</td>
+    <tr bgcolor=ffffcc><td bgcolor=ccffff>열 합</td><td> 28</td><td> 32</td><td> 36</td><td> 40</td><td> 4*34</td></tr>
+    </table>
+  </td>
+  <td valign=top>(1) 초기화 및 기호 설명<p>
+왼편과 같은 상태를 <b>초기화 상태</b>라 하자.<br>
+이제 초기화 상태에서 각 열 및 행에 대해 적당히 대칭교환하면 4차방진이
+됨을 알고 있다(위에서 보았듯이).<br>
+대칭교환 하는 수들에 대해 표에서 다음과 같이 나타내자.<br>
+<font color=blue>.</font> : 교환하지 않는 수.<br>
+<font color=blue>-</font> : 같은 행에 대해 대칭열에 있는 수 교환(대칭 열 교환).<br>
+<font color=blue>|</font> : 같은 열에 대해 대칭행에 있는 수 교환(대칭 행 교환).<br>
+<font color=blue>+</font> : 회전 교환.<br>
+사실 <b>4.1</b>에서 했던 방법은 회전교환이라고 볼 수 있다.<br>
+이는 대칭열교환과 대칭행교환의 적당한(잘못하면 안 됨) 중복이라고 볼 수 있다.<br>
+이제 방법을 일일이 설명하지 않고 교환표와 결과만을 표시할 것이다.<br>
+즉, 초기화상태에서 교환표에 따라 교환시키면 방진이 나오는 것이다.
+  </td>
+<tr>
+  <td valign=top>(2-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> .<br></td><td> +</td><td> +</td><td> .</td>
+    <tr><td> +<br></td><td> .</td><td> .</td><td> +</td>
+    <tr><td> +<br></td><td> .</td><td> .</td><td> +</td>
+    <tr><td> .<br></td><td> +</td><td> +</td><td> .</td>
+    </table>
+  </td>
+  <td valign=top>(2-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 1<br></td><td> 15</td><td> 14</td><td> 4</td>
+    <tr><td> 12<br></td><td> 6</td><td> 7</td><td> 9</td>
+    <tr><td> 8<br></td><td> 10</td><td> 11</td><td> 5</td>
+    <tr><td> 13<br></td><td> 3</td><td> 2</td><td> 16</td>
+    </table>
+  </td>
+<tr>
+  <td valign=top>(3-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> |<br></td><td> -</td><td> -</td><td> |</td>
+    <tr><td> -<br></td><td> |</td><td> |</td><td> -</td>
+    <tr><td> -<br></td><td> |</td><td> |</td><td> -</td>
+    <tr><td> |<br></td><td> -</td><td> -</td><td> |</td>
+    </table>
+  </td>
+  <td valign=top>(3-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 13<br></td><td> 3</td><td> 2</td><td> 16</td>
+    <tr><td> 8<br></td><td> 10</td><td> 11</td><td> 5</td>
+    <tr><td> 12<br></td><td> 6</td><td> 7</td><td> 9</td>
+    <tr><td> 1<br></td><td> 15</td><td> 14</td><td> 4</td>
+    </table>
+  </td>
+<tr>
+  <td valign=top>(4-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> +<br></td><td> .</td><td> .</td><td> +</td>
+    <tr><td> .<br></td><td> +</td><td> +</td><td> .</td>
+    <tr><td> .<br></td><td> +</td><td> +</td><td> .</td>
+    <tr><td> +<br></td><td> .</td><td> .</td><td> +</td>
+    </table>
+  </td>
+  <td valign=top>(4-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 16<br></td><td> 2</td><td> 3</td><td> 13</td>
+    <tr><td> 5<br></td><td> 11</td><td> 10</td><td>8</td>
+    <tr><td> 9<br></td><td> 7</td><td> 6</td><td> 12</td>
+    <tr><td> 4<br></td><td> 14</td><td> 15</td><td> 1</td>
+    </table>
+  </td>
+<tr>
+  <td valign=top>(5-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> -<br></td><td> |</td><td> |</td><td> -</td>
+    <tr><td> |<br></td><td> -</td><td> -</td><td> |</td>
+    <tr><td> |<br></td><td> -</td><td> -</td><td> |</td>
+    <tr><td> -<br></td><td> |</td><td> |</td><td> -</td>
+    </table>
+  </td>
+  <td valign=top>(5-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 4<br></td><td> 14</td><td> 15</td><td> 1</td>
+    <tr><td> 9<br></td><td> 7</td><td> 6</td><td> 12</td>
+    <tr><td> 5<br></td><td> 11</td><td> 10</td><td> 8</td>
+    <tr><td> 16<br></td><td> 2</td><td> 3</td><td> 13</td>
+    </table>
+    <p>
+    결국 4차방진에선 위 4가지 방법이 대칭 및 회전에 의해 모두 
+같음을 알 수 있다.
+  </td>
+</table>
+
+<A NAME="5">
+<font face="궁서체" color="#400040">
+        <h2>5. 6차방진 및 8차방진</h2>
+</font>
+
+<font face="궁서체" color="#400080">
+        <h3>5.1. 행 및 열 교환법에 의한 6차방진의 예</h3><p>
+</font>
+
+4차 방진은 두 행에 대해 열교환, 두 열에 대해 행교환 시켰었다.<br>
+마찬 가지로 6차방진은 세 행에 대해 열교환, 세 열에 대해 행교환하는
+방법을 찾을 수 있으면 방진을 만들 수 있다.
+여기서는 대각선의 수들은 회전교환할 것이다. 그러면 나머지는 한 행에
+대해서만 열교환, 한 열에 대해서만 행교환하는 방법을 찾는 문제로
+간단해진다.<br>
+여기서는 그렇게 할 수 있는 많은 해 중에서 한 가지만 선보인다
+(대칭 및 회전에 의해서 아래와 같지 않은 방법이 많지만 여기선
+그냥 한 가지만 선보인다).
+<p>
+
+<table border=0 bgcolor=ccffcc cellpadding=10 cellspacing=0>
+<tr>
+  <td valign=top>(1-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> +<br></td><td> -</td><td> |</td><td> .</td><td> -</td><td> +</td>
+    <tr><td> |<br></td><td> +</td><td> -</td><td> -</td><td> +</td><td> .</td>
+    <tr><td> -<br></td><td> |</td><td> +</td><td> +</td><td> .</td><td> -</td>
+    <tr><td> .<br></td><td> |</td><td> +</td><td> +</td><td> .</td><td> .</td>
+    <tr><td> |<br></td><td> +</td><td> .</td><td> .</td><td> +</td><td> .</td>
+    <tr><td> +<br></td><td> .</td><td> |</td><td> .</td><td> .</td><td> +</td>
+    </table>
+  </td>
+  <td valign=top>(1-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 36<br></td><td> 5</td><td> 33</td><td> 4</td><td> 2</td><td> 31</td>
+    <tr><td> 25<br></td><td> 29</td><td> 10</td><td> 9</td><td> 26</td><td> 12</td>
+    <tr><td> 18<br></td><td> 20</td><td> 22</td><td> 21</td><td> 17</td><td> 13</td>
+    <tr><td> 19<br></td><td> 14</td><td> 16</td><td> 15</td><td> 23</td><td> 24</td>
+    <tr><td> 7<br></td><td> 11</td><td> 27</td><td> 28</td><td> 8</td><td> 30</td>
+    <tr><td> 6<br></td><td> 32</td><td> 3</td><td> 34</td><td> 35</td><td> 1</td>
+    </table>
+    <p>
+  </td>
+</table>
+
+<font face="궁서체" color="#400080">
+        <h3>5.2. 행 및 열 교환법에 의한 8차방진의 예</h3><p>
+</font>
+
+6차방진은 여덟 행 중 네 행에 대해 열교환, 여덟 열 중 네 열에 대해 
+행교환하는 방법을 찾으면 된다. 6차방진에서와 마찬가지로
+8차방진에서도 대각선의 수들은 회전교환할 것이다. 그러면 나머지는 두 행에
+대해서만 열교환, 두 열에 대해서만 행교환하는 방법을 찾는 문제로
+간단해진다.<br>
+여기서도 많은 해 중에서 한 가지만 선보도록 하겠다.
+<p>
+
+<table border=0 bgcolor=ccffcc cellpadding=10 cellspacing=0>
+<tr>
+  <td valign=top>(1-1). 교환표
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> +<br></td><td> -</td><td> -</td><td> |</td><td> |</td><td> -</td><td> -</td><td> +</td>
+    <tr><td> -<br></td><td> +</td><td> |</td><td> -</td><td> -</td><td> |</td><td> +</td><td> -</td>
+    <tr><td> -<br></td><td> |</td><td> +</td><td> -</td><td> -</td><td> +</td><td> |</td><td> -</td>
+    <tr><td> |<br></td><td> -</td><td> -</td><td> +</td><td> +</td><td> -</td><td> -</td><td> |</td>
+    <tr><td> |<br></td><td> .</td><td> .</td><td> +</td><td> +</td><td> .</td><td> .</td><td> |</td>
+    <tr><td> .<br></td><td> |</td><td> +</td><td> .</td><td> .</td><td> +</td><td> |</td><td> .</td>
+    <tr><td> .<br></td><td> +</td><td> |</td><td> .</td><td> .</td><td> |</td><td> +</td><td> .</td>
+    <tr><td> +<br></td><td> .</td><td> .</td><td> |</td><td> |</td><td> .</td><td> .</td><td> +</td>
+    </table>
+  </td>
+  <td valign=top>(1-2). 결과
+    <table border=1 bgcolor=ffcccc cellspacing=0 cellpadding=5>
+    <tr><td> 64<br></td><td> 7</td><td> 6</td><td> 60</td><td> 61</td><td> 3</td><td> 2</td><td> 57</td>
+    <tr><td> 16<br></td><td> 55</td><td> 51</td><td> 13</td><td> 12</td><td> 54</td><td> 50</td><td> 9</td>
+    <tr><td> 24<br></td><td> 42</td><td> 46</td><td> 21</td><td> 20</td><td> 43</td><td> 47</td><td> 17</td>
+    <tr><td> 33<br></td><td> 31</td><td> 30</td><td> 37</td><td> 36</td><td> 27</td><td> 26</td><td> 40</td>
+    <tr><td> 25<br></td><td> 34</td><td> 35</td><td> 29</td><td> 28</td><td> 38</td><td> 39</td><td> 32</td>
+    <tr><td> 41<br></td><td> 18</td><td> 22</td><td> 44</td><td> 45</td><td> 19</td><td> 23</td><td> 48</td>
+    <tr><td> 49<br></td><td> 15</td><td> 11</td><td> 52</td><td> 53</td><td> 14</td><td> 10</td><td> 56</td>
+    <tr><td> 8<br></td><td> 58</td><td> 59</td><td> 4</td><td> 5</td><td> 62</td><td> 63</td><td> 1</td>
+    </table>
+    <p>
+  </td>
+</table>
+<p>
+
+<A NAME="6">
+<font face="궁서체" color="#400040">
+        <h2>6. 결론 및 과제</h2>
+</font>
+
+이상으로 3차이상의 모든 마방진을 푸는 요령을 알아 보았다.<br>
+하지만 우리에겐 다음과 같은 과제가 남아있다.
+<ul>
+  <li>3차이상의 모든 마방진에 대한 해가 하나 이상은 존재함을 증명할 것.
+  <li>3이상의 모든 n에 대해 n차 방진의 해는 몇 개 존재하는가?
+  <li>3이상의 모든 n에 대한 n차 범마방진의 존재여부는 어떻게 되는가?
+</ul>
+이에 대한 연구는 각자 해보도록 하고, 필자는 또 다른 연구가 급하므로(핑계?)
+위 문제에 대한 연구는 다음으로 미루고자 한다.
+
+<p>
+
+<hr>  <!------ 태식 일반 문서의 꼬리 부분 ------>
+최초 작성일 : 1999.3.15
+<script language=javascript>	//- 마지막 수정일
+	//document.writeln("Last modified on : " + document.lastModified)
+</script>
+
+</body>
+</html> <!--- 여기가 끝 --->
+

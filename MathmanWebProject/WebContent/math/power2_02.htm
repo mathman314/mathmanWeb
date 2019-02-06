@@ -1,0 +1,143 @@
+<html>
+<head>
+	<title>2배수 - 2단계</title>
+<script language=javascript>
+// 2배수 계산
+function goCount(form) {
+	var jisu	= parseInt(form.jisu.value) + 1;
+	var result	= form.result.value;
+	
+	// 앞자리부터 2씩 곱해 나가며 계산한다
+	
+	var newResult;
+	
+	num = 2 * parseInt(result.substring(0,1));	// 첫자리수를 2배
+	if (num>9) {
+		newResult = "1";	// 첫자리수에 대한 2배수의 10의 자리수
+		nTmp = num - 10;	// 첫자리수에 대한 2배수의  1의 자리수
+	} else {
+		newResult = "";
+		nTmp = num;
+	}
+	
+	for (var i=1; i<result.length; i++){
+		var num = 2 * parseInt(result.substring(i,i+1));	// 각 자리수를 2배
+		if (num>9) {
+			newResult += nTmp + 1;	// 각 자리수까지에 대해 앞자리수까지 결정
+			nTmp = num - 10;	// 각 자리수까지에 대해 마지막자리수 보류
+		} else {
+			newResult += nTmp;
+			nTmp = num;
+		}
+	}
+	newResult += nTmp;	// 보류된 마지막 자리수 붙이기
+
+	// 값 넣기
+	form.jisu.value		= jisu;
+	form.result.value	= newResult;
+	
+	// 정확한 자리수 넣기
+	if (result == parseInt(result)) {
+		form.jari.value		= form.result.value.length;
+	} else {
+		form.jari.value		= "무효";
+	}
+}
+
+// 초기화
+function init(form) {
+	form.jisu.value		= 0;
+	form.result.value	= 1;
+	form.jari.value		= form.result.value.length;
+}
+
+function goBaroCount(form) {
+	init(form);
+	for (i=0; i<form.baroJisu.value; i++){
+		goCount(form);
+	}
+}
+</script>
+</head>
+
+<BODY BACKGROUND="../image/back.gif" onLoad=init(form1)>
+
+<center>
+
+<font face="궁서체" color="#c00000">
+<h1>2배수 - 2단계</h1>
+</font>
+<table border=3><th>
+값절로 불어나리라
+</table>
+<p>
+
+<form name=form1>
+<table bgcolor=dddddd border=0 cellpadding=10><tr><td>
+<b>2 ^
+<input type=text name=jisu> =</b>
+<p>
+<textarea cols=50 rows=10 name=result></textarea>
+<p>
+현재 정확한 자리수 : <input type=text name=jari size=5>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type=button onClick=goCount(this.form) value="2배 계산">
+<input type=button onClick=init(this.form) value="초기화">
+<br>
+2 ^ <input type=text name=baroJisu>을 &nbsp;
+<input type=button onClick=goBaroCount(this.form) value="바로 계산하기">
+</td></table>
+</form>
+<p>
+
+</center>
+
+<b>방법</b>
+<p>
+손으로 계산하는 것처럼 앞에서부터 한자리씩 2를 곱해 나간다.
+<p>
+
+<b>결과</b>
+<p>
+브라우저와 자바스크립트에서 인식할 수 있는 자리수까지 정확한 값을 얻을 것으로 추측된다.<br>
+다만, 빠른 계산을 위해선 더 손을 봐야겠지만 여기선 생략한다.<br>
+아래는 2의 1000 거듭제곱을 바로 계산한 예이다.
+<p>
+<pre>
+2 ^ 1000 =
+10715086071862673209484250490600018105614048117055
+33607443750388370351051124936122493198378815695858
+12759467291755314682518714528569231404359845775746
+98574803934567774824230985421074605062371141877954
+18215304647498358194126739876755916554394607706291
+45711964776865421676604298316526243868372056680693
+76 (302자리)</pre>
+<p>
+
+<b>(p.s)</b>
+<p>
+여기서는 자바스크립트를 사용했으며, 최적화하지는 않았다.<br>
+그저, 2의 거듭제곱에 대해 여러자리수를 계산하는 방법을 보여주는데 목적을 두었다.<br>
+여기서 사용된 방법을 나름대로 분석(이 페이지 소스를 분석하면 됨)하여 더 많은 자리에 대해 보다 빨리 계산할 수 있도록
+만드는 것은 여러분의 몫이다.
+<br><br><br>
+
+<center>
+
+<a href=power2.htm>2배수 Home</a> |
+<a href=power2_01.htm>1단계</a> |
+2단계
+
+</center>
+
+<p>
+
+<hr>  <!------ 태식 일반 문서의 꼬리 부분 ------>
+최초 작성일 : 2000.12.10
+<script language=javascript>	//- 마지막 수정일
+	//document.writeln("Last modified on : " + document.lastModified)
+</script>
+
+</body>
+</html> <!--- 여기가 끝 --->
+
